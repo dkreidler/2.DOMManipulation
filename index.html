@@ -4,6 +4,16 @@
 <head>
     <meta charset="utf-8">
     <title>Simple DOM example</title>
+    <style>
+        .highlight {
+            color: white;
+            background-color: black;
+            padding: 10px;
+            width: 250px;
+            text-align: center;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -22,6 +32,22 @@
         var text = document.createTextNode(' - the premier source for web development knowledge.');
         var linkPara = document.querySelector('p');
         linkPara.appendChild(text);
+        sect.appendChild(linkPara);
+        // sect.removeChild(linkPara);
+        //  linkPara.parentNode.removeChild(linkPara);
+        /* -- Silly line by line way to do this.--
+        para.style.color = 'white';
+        para.style.backgroundColor = 'black';
+        para.style.padding = '10px';
+        para.style.width = '250px';
+        para.style.textAlign = 'center';
+        */
+        /*Note: Notice how the JavaScript property versions of the CSS 
+        styles are written in lower camel case whereas the CSS versions 
+        are hyphenated (e.g. backgroundColor versus background-color). 
+        Make sure you don't get these mixed up, otherwise it won't work.*/
+
+        para.setAttribute('class', 'highlight');
     </script>
 </body>
 
